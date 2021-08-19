@@ -1,8 +1,8 @@
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import { 
-  Button,
-  TextField
-} from '@material-ui/core';
+
+import 'bootstrap/dist/css/bootstrap.css';
+// import react-icons
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const themes = createTheme({
   palette: {
@@ -25,9 +25,8 @@ const themes = createTheme({
 
 const App = () => (
   <ThemeProvider theme={themes}>
-    <h1>Aplicação React teste</h1>
-    <TextField id="outlined-basic"/>
-    <Button color="primary" variant="contained">Default</Button>
+    <h1 className="text-danger">Aplicação React teste</h1>
+    <FaGithub/>
   </ThemeProvider>
 );
 
