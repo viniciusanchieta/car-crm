@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { 
+  Button,
+  TextField
+} from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const themes = createTheme({
+  palette: {
+    primary: {
+      main: '#3f2',
+    },
+  },
+  props:{
+    MuiTextField: {
+      variant: 'outlined',
+      fullWidth: true,
+    },
+    MuiSelect: {
+      variant: 'outlined',
+      fullWidth: true,
+    }
+  }
+});
+
+
+const App = () => (
+  <ThemeProvider theme={themes}>
+    <h1>Aplicação React teste</h1>
+    <TextField id="outlined-basic"/>
+    <Button color="primary" variant="contained">Default</Button>
+  </ThemeProvider>
+);
 
 export default App;
